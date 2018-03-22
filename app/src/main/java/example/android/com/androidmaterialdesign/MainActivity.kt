@@ -57,25 +57,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
+        val ft = supportFragmentManager.beginTransaction()
         when (item.itemId) {
-            R.id.nav_camera -> {
-                // Handle the camera action
+            R.id.touch_feedback -> {
+                val fragment = TouchFeedbackFragment.fragment
+                ft.replace(R.id.mainInterface,fragment)
+                ft.commit()
             }
-            R.id.nav_gallery -> {
 
-            }
-            R.id.nav_slideshow -> {
-
-            }
-            R.id.nav_manage -> {
-
-            }
-            R.id.nav_share -> {
-
-            }
-            R.id.nav_send -> {
-
-            }
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)
