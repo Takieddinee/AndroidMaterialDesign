@@ -1,5 +1,7 @@
 package example.android.com.androidmaterialdesign
 
+import android.content.Intent
+import android.opengl.Visibility
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -8,8 +10,10 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -58,17 +62,23 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         val ft = supportFragmentManager.beginTransaction()
+        textView2.visibility = View.GONE
         when (item.itemId) {
             R.id.touch_feedback -> {
-                val fragment = TouchFeedbackFragment.instance
+                val fragment = TouchFeedbackFragment()
                 ft.replace(R.id.mainInterface,fragment)
                 ft.commit()
             }
 
             R.id.floatingText -> {
-                val fragment = FloatingTextFragment.instance
+                val fragment = FloatingTextFragment()
                 ft.replace(R.id.mainInterface,fragment)
                 ft.commit()
+
+            }
+
+            R.id.tabNavigation -> {
+                startActivity(Intent(this,TabNavigationActivity::class.java))
             }
 
 
