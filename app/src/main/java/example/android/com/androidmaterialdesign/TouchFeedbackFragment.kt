@@ -19,7 +19,7 @@ class TouchFeedbackFragment : Fragment() {
 // Singleton pattern to create one object on TouchFeedbackFragment class
 
     companion object {
-            val fragment = TouchFeedbackFragment()
+            val instance = TouchFeedbackFragment()
         }
     }
 

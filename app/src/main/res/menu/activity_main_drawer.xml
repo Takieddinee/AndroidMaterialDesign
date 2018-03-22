@@ -7,5 +7,9 @@
             android:id="@+id/touch_feedback"
             android:title="Touch Feedback" />
 
+        <item
+            android:id="@+id/floatingText"
+            android:title="FloatingText/ SnackBar" />
+
 
 </menu>

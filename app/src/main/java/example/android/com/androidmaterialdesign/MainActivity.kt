@@ -60,10 +60,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val ft = supportFragmentManager.beginTransaction()
         when (item.itemId) {
             R.id.touch_feedback -> {
-                val fragment = TouchFeedbackFragment.fragment
+                val fragment = TouchFeedbackFragment.instance
                 ft.replace(R.id.mainInterface,fragment)
                 ft.commit()
             }
+
+            R.id.floatingText -> {
+                val fragment = FloatingTextFragment.instance
+                ft.replace(R.id.mainInterface,fragment)
+                ft.commit()
+            }
+
 
         }
 
