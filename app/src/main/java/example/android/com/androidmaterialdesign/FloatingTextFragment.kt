@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import kotlinx.android.synthetic.main.fragment_floating_text.view.*
 import org.jetbrains.anko.design.snackbar
 import org.jetbrains.anko.toast
 
@@ -22,8 +22,7 @@ class FloatingTextFragment : Fragment() {
 
 
         val view =  inflater!!.inflate(R.layout.fragment_floating_text, container, false)
-        val button =  view.findViewById<Button>(R.id.button3)
-        button.setOnClickListener { view ->
+        view.button3.setOnClickListener { view ->
             snackbar(view,"Veuillez confirmer","Ok"){
                activity.toast("Merci pour la confirmation")
             }
